@@ -8,14 +8,15 @@ class FriendlyDragon extends Dragon{
        this.friend = friend
     }
     hasLifeGoals(){
-        console.log(`${this.name} likes to ${this.lifeGoals}`)
+        // the reason we use this.lifeGoals is because its referring to the properties in that instance life goals is expected to be an array
+        this.lifeGoals.forEach(element => {
+           console.log(`${this.name} likes to ${element}`)
+        });
     }
     helpsPeople(){
-        return `${this.name} helps their friend ${this.friend}.`
+        return `${this.name} helps their friend ${this.friend}`
     }
 
 }
 
-module.exports ={
-    FriendlyDragon
-}
+module.exports = FriendlyDragon
